@@ -52,9 +52,14 @@ int main() {
     }
 
     int newStudentSize;
-    printf("\nHow many students do you want?:");
-    if(scanf("%d", &newStudentSize) != 1) {
-        while((getchar()) != '\n' );
+    while(true) {
+        printf("\nHow many students do you want?:");
+        if(scanf("%d", &newStudentSize) != 1) {
+            while((getchar()) != '\n' );
+            printf("Bad value provided ensure you're entering a integer value.");
+        } else {
+            break;
+        }
     }
 
     if(newStudentSize > numberOfStudents) {
